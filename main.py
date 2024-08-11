@@ -1,12 +1,10 @@
 import string
 
-def main() -> None:
-    book_path: str = r"books/frankenstein.txt"
+def main(book_path: str) -> None:
     book: str = get_book_text(book_path)
     word_count: int = count_words(book)
-    print(f"word count is {word_count}")
     letter_count = count_letters(book)
-    print(f"the char dict is {letter_count}")
+    
     generate_report(book_path = book_path, word_count = word_count, chars_dict_list = letter_count)
     
 def count_words(text: str) -> int:
@@ -41,4 +39,4 @@ def generate_report(book_path: str, word_count: int, chars_dict_list: list[dict[
 
 
 if __name__ == "__main__":
-    main()
+    main(book_path = r"books/frankenstein.txt")
